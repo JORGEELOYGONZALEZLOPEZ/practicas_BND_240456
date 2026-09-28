@@ -12,6 +12,7 @@ DROP USER IF EXISTS 'obed.vargas'@'%';
 CREATE USER 'marco.ramirez'@'%' IDENTIFIED BY 'qwerty123';
 CREATE USER 'jorge.gonzalez'@'%' IDENTIFIED BY '240456';
 CREATE USER 'osmar.ortega'@'%' IDENTIFIED BY '240036';
+CREATE USER 'dorian.barrios'@'%' IDENTIFIED BY '240065';
 CREATE USER 'obed.vargas'@'%' IDENTIFIED BY '240145';
 
 
@@ -122,6 +123,9 @@ TO 'obed.vargas'@'%';
 GRANT 'seller' 
 TO 'osmar.ortega'@'%';
 
+GRANT 'seller' 
+TO 'dorian.barrios'@'%';
+
 /* PERMISOS ESPECÍFICOS PARA ROLES */
 GRANT SELECT, INSERT, UPDATE ON db_test_7b.tb_users TO 'support';
 GRANT SELECT, INSERT, UPDATE ON db_test_7b.tb_products TO 'support';
@@ -142,9 +146,13 @@ TO 'obed.vargas'@'%';
 SET DEFAULT ROLE 'seller' 
 TO 'osmar.ortega'@'%';
 
+SET DEFAULT ROLE 'seller' 
+TO 'dorian.barrios'@'%';
+
 
 /* ============================================================
    ACTUALIZAR PRIVILEGIOS
    ============================================================ */
+SELECT "Los usuarios han sido creados correctamente" AS mensaje;
 
 FLUSH PRIVILEGES;
