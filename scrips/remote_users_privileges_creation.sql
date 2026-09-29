@@ -7,6 +7,7 @@ DROP USER IF EXISTS 'marco.ramirez'@'%';
 DROP USER IF EXISTS 'jorge.gonzalez'@'%';
 DROP USER IF EXISTS 'osmar.ortega'@'%';
 DROP USER IF EXISTS 'obed.vargas'@'%';
+DROP USER IF EXISTS 'dorian.barrios'@'%';
 
 /* Crear usuarios */
 CREATE USER 'marco.ramirez'@'%' IDENTIFIED BY 'qwerty123';

@@ -1,11 +1,4 @@
 ﻿ID,SKU,name,description,current_price,current_stock,status,creation_date,last_update
-1,PROD-0001,Power Bank Lenovo Ultra,Batería externa portátil de alta capacidad para carga rápida marca Lenovo. Modelo serie Ultra con garantía oficial.,1037.95,11,1,2026-09-18 18:58:00,2026-09-18 21:53:00
-2,PROD-0002,Laptop Kingston Max,Computadoras portátiles de alto rendimiento e ingenieria marca Kingston. Modelo serie Max con garantía oficial.,30185.13,68,1,2026-09-21 21:40:00,2026-09-22 07:48:00
-3,PROD-0003,Silla Gamer Acer Plus,Silla ergonómica reclinable para videojuegos y trabajo en oficina marca Acer. Modelo serie Plus con garantía oficial.,3015.0,55,1,2026-09-17 11:47:00,2026-09-18 23:44:00
-4,PROD-0004,Router Wi-Fi Asus V2,Router inalámbrico de alta velocidad dual band Wi-Fi 6 marca Asus. Modelo serie V2 con garantía oficial.,2818.15,94,1,2026-09-17 15:49:00,2026-09-18 04:09:00
-5,PROD-0005,Cable HDMI LG Evo,Cable HDMI de alta velocidad compatible con resolución 4K/8K marca LG. Modelo serie Evo con garantía oficial.,311.8,76,1,2026-09-22 12:19:00,2026-09-23 10:43:00
-6,PROD-0006,Laptop Samsung Gaming,Computadoras portátiles de alto rendimiento e ingenieria marca Samsung. Modelo serie Gaming con garantía oficial.,7843.58,20,1,2026-09-21 14:55:00,2026-09-22 22:20:00
-7,PROD-0007,Memoria USB Corsair Pro,Unidad flash USB de alta velocidad de transferencia marca Corsair. Modelo serie Pro con garantía oficial.,716.07,12,1,2026-09-18 17:22:00,2026-09-20 16:15:00
 8,PROD-0008,Memoria USB Corsair V2,Unidad flash USB de alta velocidad de transferencia marca Corsair. Modelo serie V2 con garantía oficial.,481.99,86,1,2026-09-17 20:02:00,2026-09-18 18:22:00
 9,PROD-0009,Bocina Bluetooth Xiaomi Air,Bocina portátil inalámbrica resistente al agua con excelente sonido marca Xiaomi. Modelo serie Air con garantía oficial.,440.43,7,1,2026-09-20 17:43:00,2026-09-21 13:54:00
 10,PROD-0010,Memoria USB LG Gaming,Unidad flash USB de alta velocidad de transferencia marca LG. Modelo serie Gaming con garantía oficial.,763.84,77,1,2026-09-22 20:44:00,2026-09-23 07:14:00
@@ -4999,3 +4992,10 @@
 4998,PROD-4998,Bocina Bluetooth Dell Max,Bocina portátil inalámbrica resistente al agua con excelente sonido marca Dell. Modelo serie Max con garantía oficial.,694.39,27,1,2026-09-17 14:15:00,2026-09-17 19:06:00
 4999,PROD-4999,Smartwatch Corsair Lite,"Reloj inteligente con monitoreo de actividad física, ritmo cardiaco y GPS marca Corsair. Modelo serie Lite con garantía oficial.",3747.35,55,1,2026-09-21 21:39:00,2026-09-23 03:54:00
 5000,PROD-5000,Micrófono Condensador Dell Gaming,Micrófono de condensador USB profesional para podcasting y streaming marca Dell. Modelo serie Gaming con garantía oficial.,3071.26,0,1,2026-09-22 12:55:00,2026-09-23 13:55:00
+5001,PROD-0001,Power Bank Lenovo Ultra,Batería externa portátil de alta capacidad para carga rápida marca Lenovo. Modelo serie Ultra con garantía oficial.,1037.95,11,1,2026-09-18 18:58:00,2026-09-18 21:53:00
+5002,PROD-0002,Laptop Kingston Max,Computadoras portátiles de alto rendimiento e ingenieria marca Kingston. Modelo serie Max con garantía oficial.,30185.13,68,1,2026-09-21 21:40:00,2026-09-22 07:48:00
+5003,PROD-0003,Silla Gamer Acer Plus,Silla ergonómica reclinable para videojuegos y trabajo en oficina marca Acer. Modelo serie Plus con garantía oficial.,3015.0,55,1,2026-09-17 11:47:00,2026-09-18 23:44:00
+5004,PROD-0004,Router Wi-Fi Asus V2,Router inalámbrico de alta velocidad dual band Wi-Fi 6 marca Asus. Modelo serie V2 con garantía oficial.,2818.15,94,1,2026-09-17 15:49:00,2026-09-18 04:09:00
+5005,PROD-0005,Cable HDMI LG Evo,Cable HDMI de alta velocidad compatible con resolución 4K/8K marca LG. Modelo serie Evo con garantía oficial.,311.8,76,1,2026-09-22 12:19:00,2026-09-23 10:43:00
+5006,PROD-0006,Laptop Samsung Gaming,Computadoras portátiles de alto rendimiento e ingenieria marca Samsung. Modelo serie Gaming con garantía oficial.,7843.58,20,1,2026-09-21 14:55:00,2026-09-22 22:20:00
+5007,PROD-0007,Memoria USB Corsair Pro,Unidad flash USB de alta velocidad de transferencia marca Corsair. Modelo serie Pro con garantía oficial.,716.07,12,1,2026-09-18 17:22:00,2026-09-20 16:15:00
