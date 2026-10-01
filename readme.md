@@ -10,5 +10,5 @@ Periodo: Septiembre - Diciembre 2026
 
 |No. | Nombre | Descripcion | Potenciador | Estatus |
 |---|---|---|---|---|
-|1.|Metodologia de Evaluacion de la Materia| Transcribir en libreta y comprender la metodologia y fechas de evaluacion de la asignatura|5|concluida|
-|2.|Conexiones remotas para Bases de Datos SQL| Crear y Administrar usuarios y privilegios de origenes remotos a traves de internet o una red local| ??|En Proceso|
+|1.|Metodologia de Evaluacion de la Materia| Transcribir en libreta y comprender la metodologia y fechas de evaluacion de la asignatura|5|🟢Concluida|
+|2.|Conexiones remotas para Bases de Datos SQL| Crear y Administrar usuarios y privilegios de origenes remotos a traves de internet o una red local| 60 firmas|🟢Concluida|
