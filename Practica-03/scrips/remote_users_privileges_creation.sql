@@ -91,8 +91,20 @@ GRANT SELECT, UPDATE
 ON db_test_7b.* 
 TO 'support';
 
-GRANT SELECT
+GRANT SELECT, INSERT, UPDATE
 ON db_test_7b.tbc_categories TO 'support';
+
+GRANT SELECT, INSERT, UPDATE
+ON db_test_7b.tb_users
+TO 'support';
+
+GRANT SELECT, UPDATE 
+ON db_test_7b.tb_products
+TO 'support';
+
+GRANT SELECT, INSERT, UPDATE
+ON db_test_7b.tbc_categories
+TO 'support';
 
 
 /* COMMON */
