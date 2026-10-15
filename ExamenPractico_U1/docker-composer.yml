@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  postgres_osmar:
+    image: postgres:15-alpine
+    container_name: postgres_jorge_gonzalez
+    restart: always
+    environment:
+      POSTGRES_USER: jorge.gonzalez
+      POSTGRES_PASSWORD: "240456"
+      POSTGRES_DB: Jorge_db
+    ports:
+      - "40456:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  mysql_osmar:
+    image: mysql:8.0
+    container_name: mysql_jorge_gonzalez
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: jorge_root_password
+      MYSQL_DATABASE: jorge_db
+      MYSQL_USER: jorge.gonzalez
+      MYSQL_PASSWORD: "240456"
+    ports:
+      - "40457:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_jorge
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: jorge.gonzalez@proyectos-integradores-7b-itiid.tech
+      PGADMIN_DEFAULT_PASSWORD: "240456"
+    ports:
+      - "80:80"
+
+volumes:
+  postgres_data:
+  mysql_data:
