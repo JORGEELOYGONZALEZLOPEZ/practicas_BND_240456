@@ -1,0 +1,15 @@
+const fs = require('node:fs');
+const vm = require('node:vm');
+const js = fs.readFileSync(__dirname + '/app.js', 'utf8');
+const sql = fs.readFileSync(__dirname + '/../backups/Respaldo_20261015.sql', 'utf8');
+const source = js.slice(0, js.indexOf("$('#fileInput').onchange"));
+const context = { console, Date, sql };
+vm.createContext(context);
+vm.runInContext(source + ';globalThis.schema=parseSQL(sql);', context);
+const s = context.schema;
+console.log(JSON.stringify({database:s.db,tables:s.tables.map(t=>({name:t.name,columns:t.columns.length,rowsInBackup:t.rowCount,foreignKeys:t.foreignKeys.length})),views:s.views.map(x=>x.name),triggers:s.triggers.map(x=>x.name),routines:s.routines.map(x=>x.name),relationships:s.relations.map(r=>`${r.source}.${r.columns.join(',')}→${r.target}.${r.refColumns.join(',')}`),warnings:s.warnings},null,2));
+const totalColumns=s.tables.reduce((n,t)=>n+t.columns.length,0);
+const backupRows=s.tables.reduce((n,t)=>n+(t.rowCount||0),0);
+const checks=[s.tables.length===8,totalColumns===53,s.relations.length===8,s.views.length===3,s.triggers.length===9,s.routines.length===2,backupRows===10441,s.warnings.length===0];
+console.log(`\nValidación: ${checks.filter(Boolean).length}/${checks.length} comprobaciones correctas; ${totalColumns} columnas; ${backupRows} filas en INSERT del respaldo.`);
+if(checks.some(ok=>!ok))process.exitCode=1;
