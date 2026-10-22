@@ -8,31 +8,19 @@ DROP USER IF EXISTS 'jorge.gonzalez'@'%';
 DROP USER IF EXISTS 'osmar.ortega'@'%';
 DROP USER IF EXISTS 'obed.vargas'@'%';
 DROP USER IF EXISTS 'dorian.barrios'@'%';
+DROP USER IF EXISTS 'app_web'@'%';
+DROP USER IF EXISTS 'app_mobile'@'%';
 
-/* Crear usuarios */
-CREATE USER 'marco.ramirez'@'%' IDENTIFIED BY 'qwerty123';
-CREATE USER 'jorge.gonzalez'@'%' IDENTIFIED BY '240456';
-CREATE USER 'osmar.ortega'@'%' IDENTIFIED BY '240036';
-CREATE USER 'dorian.barrios'@'%' IDENTIFIED BY '240065';
-CREATE USER 'obed.vargas'@'%' IDENTIFIED BY '240145';
+/* Crear usuarios remotos */
+CREATE USER IF NOT EXISTS 'marco.ramirez'@'%' IDENTIFIED BY 'qwerty123';
+CREATE USER IF NOT EXISTS 'jorge.gonzalez'@'%' IDENTIFIED BY '240456';
+CREATE USER IF NOT EXISTS 'osmar.ortega'@'%' IDENTIFIED BY '240036';
+CREATE USER IF NOT EXISTS 'dorian.barrios'@'%' IDENTIFIED BY '240065';
+CREATE USER IF NOT EXISTS 'obed.vargas'@'%' IDENTIFIED BY '240145';
 
-
-/* ============================================================
-   ASIGNAR PRIVILEGIOS DE SUPER USUARIO
-   ============================================================ */
-
-GRANT ALL PRIVILEGES ON *.* 
-TO 'jorge.gonzalez'@'%';
-
-
-/* ============================================================
-   PRIVILEGIOS DE SELECCIÓN, INSERCIÓN, ACTUALIZACIÓN Y
-   ELIMINACIÓN
-   ============================================================ */
-
-GRANT SELECT, INSERT, UPDATE, DELETE 
-ON db_test_7b.* 
-TO 'osmar.ortega'@'%';
+/* Users Middleware */
+CREATE USER IF NOT EXISTS 'app_web'@'%' IDENTIFIED BY 'web123';
+CREATE USER IF NOT EXISTS 'app_mobile'@'%' IDENTIFIED BY 'mobile890';
 
 
 /* ============================================================
@@ -40,7 +28,7 @@ TO 'osmar.ortega'@'%';
    ============================================================ */
 
 /* Eliminar roles si ya existen */
-
+DROP ROLE IF EXISTS 'superadmin';
 DROP ROLE IF EXISTS 'admin';
 DROP ROLE IF EXISTS 'seller';
 DROP ROLE IF EXISTS 'buyer';
@@ -50,86 +38,79 @@ DROP ROLE IF EXISTS 'user_not_registered';
 
 /* Crear roles */
 CREATE ROLE IF NOT EXISTS 'superadmin';
-CREATE ROLE 'admin';
-CREATE ROLE 'seller';
-CREATE ROLE 'buyer';
-CREATE ROLE 'support';
-CREATE ROLE 'common';
-CREATE ROLE 'user_not_registered';
+CREATE ROLE IF NOT EXISTS 'admin';
+CREATE ROLE IF NOT EXISTS 'seller';
+CREATE ROLE IF NOT EXISTS 'buyer';
+CREATE ROLE IF NOT EXISTS 'support';
+CREATE ROLE IF NOT EXISTS 'common';
+CREATE ROLE IF NOT EXISTS 'user_not_registered';
 
 
 /* ============================================================
    ASIGNAR PRIVILEGIOS A LOS ROLES
    ============================================================ */
 
-/* SUPERADMIN*/
+/* SUPERADMIN */
 GRANT ALL PRIVILEGES
-ON db_test_7b.*
+ON *.*
 TO 'superadmin';
-
 
 /* ADMIN */
 GRANT ALL PRIVILEGES 
 ON db_test_7b.* 
 TO 'admin';
 
-
 /* SELLER */
-GRANT SELECT, INSERT, UPDATE, DELETE 
-ON db_test_7b.* 
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON db_test_7b.tb_products
 TO 'seller';
 
-
 /* BUYER */
-GRANT SELECT, INSERT 
-ON db_test_7b.* 
-TO 'buyer';
-
 
 /* SUPPORT */
 GRANT SELECT, UPDATE 
 ON db_test_7b.* 
 TO 'support';
 
-GRANT SELECT, INSERT, UPDATE
+GRANT INSERT
 ON db_test_7b.tbc_categories TO 'support';
 
-GRANT SELECT, INSERT, UPDATE
-ON db_test_7b.tb_users
-TO 'support';
+GRANT INSERT
+ON db_test_7b.tb_users TO 'support';
 
-GRANT SELECT, UPDATE 
-ON db_test_7b.tb_products
-TO 'support';
-
-GRANT SELECT, INSERT, UPDATE
-ON db_test_7b.tbc_categories
-TO 'support';
-
+GRANT INSERT 
+ON db_test_7b.tb_products TO 'support';
 
 /* COMMON */
 GRANT SELECT 
 ON db_test_7b.* 
 TO 'common';
 
-
 /* USER NOT REGISTERED */
-GRANT SELECT 
-ON db_test_7b.* 
+GRANT INSERT
+ON db_test_7b.tb_users
+TO 'user_not_registered';
+
+GRANT INSERT
+ON db_test_7b.tb_people
+TO 'user_not_registered';
+
+GRANT EXECUTE ON
+PROCEDURE db_test_7b.sp_register_new_user
 TO 'user_not_registered';
 
 
 /* ============================================================
    ASIGNAR ROLES A LOS USUARIOS
    ============================================================ */
-/*Jorge = superadmin*/
+
+/* Jorge = superadmin */
 GRANT 'superadmin' 
 TO 'jorge.gonzalez'@'%';
 
 /* MARCO = ADMIN */
 GRANT 'admin' 
 TO 'marco.ramirez'@'%';
-
 
 /* OBED = SUPPORT */
 GRANT 'support' 
@@ -139,19 +120,24 @@ TO 'obed.vargas'@'%';
 GRANT 'seller' 
 TO 'osmar.ortega'@'%';
 
+/* DORIAN = SELLER */
 GRANT 'seller' 
 TO 'dorian.barrios'@'%';
 
-/* PERMISOS ESPECÍFICOS PARA ROLES */
-GRANT SELECT, INSERT, UPDATE ON db_test_7b.tb_users TO 'support';
-GRANT SELECT, INSERT, UPDATE ON db_test_7b.tb_products TO 'support';
+/* ASIGNAR ROLES A LAS CREDENCIALES DE LA CONEXION PARA LAS APPS */
+GRANT 'user_not_registered' 
+TO 'app_web'@'%';
 
-GRANT SELECT, INSERT, UPDATE, DELETE ON db_test_7b.tb_products TO 'seller';
+GRANT 'user_not_registered' 
+TO 'app_mobile'@'%';
 
 
 /* ============================================================
    ESTABLECER ROLES POR DEFECTO
    ============================================================ */
+
+SET DEFAULT ROLE 'superadmin' 
+TO 'jorge.gonzalez'@'%';
 
 SET DEFAULT ROLE 'admin' 
 TO 'marco.ramirez'@'%';
@@ -165,10 +151,17 @@ TO 'osmar.ortega'@'%';
 SET DEFAULT ROLE 'seller' 
 TO 'dorian.barrios'@'%';
 
+SET DEFAULT ROLE 'user_not_registered'
+TO 'app_web'@'%';
+
+SET DEFAULT ROLE 'user_not_registered'
+TO 'app_mobile'@'%';
+
 
 /* ============================================================
-   ACTUALIZAR PRIVILEGIOS
+   ACTUALIZAR PRIVILEGIOS Y CONFIRMACIÓN
    ============================================================ */
-SELECT "Los usuarios han sido creados correctamente" AS mensaje;
 
 FLUSH PRIVILEGES;
+
+SELECT "Los usuarios y roles han sido creados correctamente" AS mensaje;
