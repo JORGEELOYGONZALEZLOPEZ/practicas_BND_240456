@@ -7,3 +7,9 @@
 .badge.uk{color:#0c947d}.badge.ai{color:#b36d23}.badge.nn{color:#a1a7b2}
 
 .badge.meta{width:auto;min-width:15px;color:#82713e;white-space:nowrap;font-size:7px}
+.edge{stroke-dasharray:7 8;animation:edge-flow 1.4s linear infinite;transition:opacity .2s,stroke .2s,stroke-width .2s}
+.node,.edge{transition:opacity .2s,filter .2s,box-shadow .2s}
+.node.hovered{z-index:3;box-shadow:0 12px 32px #293b8230;filter:drop-shadow(0 0 7px #4263eb25)}
+.node.dim{opacity:.18}#canvas:has(.node.hovered) .edge:not(.related){opacity:.18}
+.row-count{background:#eef1ff!important;color:#3853bd!important;border-radius:10px;padding:4px 7px;font:600 8px var(--mono)!important}
+@keyframes edge-flow{to{stroke-dashoffset:-30}}
