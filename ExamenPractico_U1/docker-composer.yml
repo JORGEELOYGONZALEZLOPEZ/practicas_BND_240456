@@ -36,8 +36,8 @@ services:
       PGADMIN_DEFAULT_EMAIL: jorge.gonzalez@proyectos-integradores-7b-itiid.tech
       PGADMIN_DEFAULT_PASSWORD: "240456"
     ports:
-      - "80:80"
+      - "40458:80"
 
 volumes:
-  postgres_data:
-  mysql_data:
+  postgres_Jorge:
+  mysql_Jorge:
