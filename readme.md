@@ -15,4 +15,4 @@ Periodo: Septiembre - Diciembre 2026
 |3.|Manipulación de Datos en Conexiones Remotas a Bases de Datos Relacionales| Crear Procedimientos Almacenados, Funciones, Tablas Derivada, Importación de Datos en el Contexto de E-Commerce |?? | 🟢En pogreso|
 |4.|Examen Práctico Instalación de Postgre y MySQL en un VPS| Instalar, Configurar, Desplegar y Simular datos en los Servicios de Bases de Datos Relacionales Remotas|100 | 🟢En progreso|
 
-* 📖 **[Diccionario de Datos Completo](./Practica-03/backups/diccionario_erp_25.html)**
+* 📖 **[Abrir Diccionario de Datos Completo](https://jorgeeloygonzalezlopez.github.io/practicas_BND_240456/Practica-03/backups/diccionario_erp_25.html)**
