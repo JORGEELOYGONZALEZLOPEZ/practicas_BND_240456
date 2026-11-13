@@ -45,6 +45,9 @@ SELECT * FROM vw_trazabilidad_usuarios ORDER BY operation_date asc;
 -- 15. contabilidad cuantos productos por tabla hay por usuarios*/
 SELECT COUNT(*), vp.inserted_by FROM vw_trazabilidad_productos vp GROUP BY vp.inserted_by;
 
+-- 16 contabilizador de las categorizaciones de los productos*/
+SELECT COUNT(*) AS total_categorizaciones FROM tbd_products_categories;
+
 -- Agregando el rol del SGBD
 SELECT 
     u.nick,
