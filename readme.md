@@ -16,3 +16,4 @@ Periodo: Septiembre - Diciembre 2026
 |4.|Examen Práctico Instalación de Postgre y MySQL en un VPS| Instalar, Configurar, Desplegar y Simular datos en los Servicios de Bases de Datos Relacionales Remotas|100 | 🟢En progreso|
 
 * 📖 **[Abrir Diccionario de Datos Completo](https://jorgeeloygonzalezlopez.github.io/practicas_BND_240456/Practica-03/backups/diccionario_erp_25.html)**
+* 🗺️ **[Abrir Diagrama y Explorador de Datos](https://jorgeeloygonzalezlopez.github.io/practicas_BND_240456/Practica-03/backups/diagrama_explorador.html)**
