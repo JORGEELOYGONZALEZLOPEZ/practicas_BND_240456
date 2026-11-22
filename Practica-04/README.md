@@ -6,12 +6,10 @@ Este repositorio contiene la implementación, respaldos y documentación técnic
 
 ## 📊 Documentación y Artefactos de Base de Datos
 
-Puedes consultar el diseño estructural de la base de datos directamente desde este repositorio a través de los siguientes enlaces:
+Puedes consultar el diseño estructural de la base de datos directamente en el navegador a través de los siguientes enlaces interactivos:
 
-* 📐 **[Diagrama Entidad-Relación (ER)](./Practica-04/Backups/diagrama_er.html)** *(Ruta relativa: `https://jorgeeloygonzalezlopez.github.io/practicas_BND_240456/Practica-04/Backups/diagrama_er.html`)*
-* 📖 **[Diccionario de Datos](./Practica-04/Backups/diccionario_datos.html)** *(Ruta relativa: `https://jorgeeloygonzalezlopez.github.io/practicas_BND_240456/Practica-04/Backups/diccionario_datos.html`)*
-
-> **Nota para GitHub:** Al hacer clic en los enlaces anteriores desde la interfaz web de GitHub, podrás visualizar el código fuente del archivo HTML. Si deseas verlos renderizados en el navegador, puedes clonar el repositorio o utilizar GitHub Pages / [htmlpreview.github.io](https://htmlpreview.github.io/).
+* 📐 **[Diagrama Entidad-Relación (ER)](https://jorgeeloygonzalezlopez.github.io/practicas_BND_240456/Practica-04/Backups/diagrama_er.html)**
+* 📖 **[Diccionario de Datos](https://jorgeeloygonzalezlopez.github.io/practicas_BND_240456/Practica-04/Backups/diccionario_datos.html)**
 
 ---
 
@@ -61,8 +59,10 @@ Validación de control de stock y reversión de beneficios aplicados.
 ```text
 practicas_BND_240456/
 ├── Practica-04/
-│   └── Backups/
-│       ├── diagrama_er.html          # Modelo Entidad-Relación interactivo
-│       └── diccionario_datos.html    # Definición de tablas, atributos y restricciones
-└── README.md                         # Documentación general de la práctica
-```
+│   ├── Backups/
+│   │   ├── diagrama_er.html          # Modelo Entidad-Relación interactivo
+│   │   └── diccionario_datos.html    # Definición de tablas, atributos y restricciones
+│   ├── queries/                      # Consultas y validación de casos de prueba
+│   ├── scrips/                       # Scripts de creación y carga de datos
+│   └── README.md                     # Documentación de la Práctica 04
+└── readme.md                         # Documentación general de la asignatura
