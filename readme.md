@@ -8,8 +8,8 @@ Este repositorio contiene la implementación, respaldos y documentación técnic
 
 Puedes consultar el diseño estructural de la base de datos directamente desde este repositorio a través de los siguientes enlaces:
 
-* 📐 **[Diagrama Entidad-Relación (ER)](./Practica-04/Backups/diagrama_er.html)** *(Ruta relativa: `Practica-04/Backups/diagrama_er.html`)*
-* 📖 **[Diccionario de Datos](./Practica-04/Backups/diccionario_datos.html)** *(Ruta relativa: `Practica-04/Backups/diccionario_datos.html`)*
+* 📐 **[Diagrama Entidad-Relación (ER)](./Practica-04/Backups/diagrama_er.html)** *(Ruta relativa: `https://jorgeeloygonzalezlopez.github.io/practicas_BND_240456/Practica-04/Backups/diagrama_er.html`)*
+* 📖 **[Diccionario de Datos](./Practica-04/Backups/diccionario_datos.html)** *(Ruta relativa: `https://jorgeeloygonzalezlopez.github.io/practicas_BND_240456/Practica-04/Backups/diccionario_datos.html`)*
 
 > **Nota para GitHub:** Al hacer clic en los enlaces anteriores desde la interfaz web de GitHub, podrás visualizar el código fuente del archivo HTML. Si deseas verlos renderizados en el navegador, puedes clonar el repositorio o utilizar GitHub Pages / [htmlpreview.github.io](https://htmlpreview.github.io/).
 
